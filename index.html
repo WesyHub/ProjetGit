@@ -1,13 +1,47 @@
-<style>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Accueil</title>
+        <style type="text/css" >
+            .conteneur div{
+			padding: 40px 40px;
+			background-color: red;
+		    }
+            main{
+                padding: 150px;
+            }
+            .conteneur{
+                display: flex;
+            }
+            #ex1{
+				flex-direction: row;
+				flex-wrap: nowrap;
 
-header {background-color:#ffffff;background-repeat:no-repeat;background-position:top left;background-attachment:fixed;}
-h1{font-family:Arial, sans-serif;color:#ff0000;background-color:#0400ff;}
-p {font-family:Georgia, serif;font-size:14px;font-style:normal;font-weight:normal;color:#0a0a0a;background-color:#002aff;}
-</style>
+				justify-content: space-around;
+				align-items: center;
+			}
+        </style>
+    </head>
 
-<header>
-<h1>Bienvenue sur notre site !</h1>
-<p>Nous sommes une super Startup</p>
-</header>
-
+    <body>
+        <header style="background-color: blue; font-weight: bold; padding-top: 3px;padding-bottom: 3px;">
+            <h1 style="color: red;">Bienvenue sur notre site !</h1>
+            <p>nous sommes une super Startup</p>
+        </header>
+        <main>
+            <div class="conteneur" id="ex1">
+                <div><p></p></div>
+                <div><p></p></div>
+                <div><p></p></div>
+            </div>
+        </main>
+        <footer style="background-color: chocolate; padding: 5px;">
+            <ul>
+               <li> <a style="text-decoration: none;color: black;" href="nous_contacter.html">Nous contacter</a></li>
+               <li> <a style="text-decoration: none; color:black;" href="nous_rejoindre.html">Nous rejoindre</a></li>
+            </ul>
+        </footer>
+    </body>
+</html>
 
