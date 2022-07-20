@@ -1,4 +1,20 @@
 #!/usr/bin/env ruby
 
 logRegex = /console.log(.)/
-fileNames = `git diff --cached --name-only ':(exclude).githooks/pre-commit'`.split("\n")
+fileNames = `git diff --cached --name-only`.split("\n")
+logFound = false
+
+puts fileNames
+fileNames.each do |fileName|
+	file = File.open(fileName)
+	content = file.read
+	#if logRegex.match(content)
+		#logFound = true
+		#puts "|POLICY| console.log() found in file : #{fileName}"
+	#end
+end
+
+if logFound
+	puts "|POLICY| Commit refused, please remove all your logs"
+	exit 1
+end
