@@ -2,7 +2,7 @@
 
 fileNames = ARGV[0]
 logFound = false
-logRegex = /[ref :]/
+logRegex = /[ref: [0-9]+]/
 
 puts fileNames
 if fileNames =~ logRegex
