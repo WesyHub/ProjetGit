@@ -2,11 +2,11 @@
 
 fileNames = `git log -1 --format=%s`.split("\n")
 logFound = false
-
+logRegex = /[ref :]/
 puts fileNames
 fileNames.each do |fileName|
     
-    if fileName =~ /[ref :]/
+    if fileName.match(logRegex)
         puts "Commit done !"
 	# file = File.open(fileName)
 	# content = file.read
