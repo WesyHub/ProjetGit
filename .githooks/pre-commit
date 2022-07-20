@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-fileNames = `git log -1 --oneline`.split("\n")
+fileNames = `git log -1 --format=%s`.split("\n")
 logFound = false
 
 puts fileNames
