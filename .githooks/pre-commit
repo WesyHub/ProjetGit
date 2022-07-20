@@ -1,10 +1,9 @@
 #!/usr/bin/env ruby
 
-logRegex = /console.log(.)/
-fileNames = `git diff --cached --name-only ":(exclude).githooks/pre-commit"`.split("\n")
+fileNames = `git log -1 --oneline`.split("\n")
 logFound = false
 
-
+puts fileNames
 fileNames.each do |fileName|
     puts "#{fileName}"
 	# file = File.open(fileName)
