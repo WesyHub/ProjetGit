@@ -6,8 +6,9 @@ logFound = false
 
 puts fileNames
 fileNames.each do |fileName|
-	file = File.open(fileName)
-	content = file.read
+    puts "#{fileName}"
+	# file = File.open(fileName)
+	# content = file.read
 	#if logRegex.match(content)
 		#logFound = true
 		#puts "|POLICY| console.log() found in file : #{fileName}"
