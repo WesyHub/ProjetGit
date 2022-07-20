@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 logRegex = /console.log(.)/
-fileNames = `git diff --cached --name-only ':(exclude).githooks/pre-commit'`.split("\n")
+fileNames = `git diff --cached --name-only ":(exclude).githooks/pre-commit"`.split("\n")
 logFound = false
 
 puts fileNames
