@@ -5,16 +5,15 @@ logFound = false
 
 puts fileNames
 fileNames.each do |fileName|
-    puts "#{fileName}"
+    if fileName =~ /[ref :]/
+        puts "Commit done !"
 	# file = File.open(fileName)
 	# content = file.read
 	#if logRegex.match(content)
 		#logFound = true
 		#puts "|POLICY| console.log() found in file : #{fileName}"
-	#end
-end
-
-if logFound
-	puts "|POLICY| Commit refused, please remove all your logs"
-	exit 1
+    else
+        puts "|POLICY| Commit refused, please add the ticket reference ex: [ref : 42]"
+	    exit 1
+	end
 end
