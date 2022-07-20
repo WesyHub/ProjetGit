@@ -1,20 +1,15 @@
 #!/usr/bin/env ruby
 
-fileNames = `git log -1 --format=%s`.split("\n")
+fileNames = ARGV[0]
 logFound = false
 logRegex = /[ref :]/
+
 puts fileNames
-fileNames.each do |fileName|
-    
-    if fileName.match(logRegex)
-        puts "Commit done !"
-	# file = File.open(fileName)
-	# content = file.read
-	#if logRegex.match(content)
-		#logFound = true
-		#puts "|POLICY| console.log() found in file : #{fileName}"
-    else
-        puts "|POLICY| Commit refused, please add the ticket reference ex: [ref : 42]"
-	    exit 1
-	end
+if fileNames =~ logRegex
+    puts "Commit done !"
+
+else
+    puts "|POLICY| Commit refused, please add the ticket reference ex: [ref : 42]"
+    # exit 1
 end
+
